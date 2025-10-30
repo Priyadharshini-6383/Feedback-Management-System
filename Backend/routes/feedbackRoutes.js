@@ -29,4 +29,23 @@ router.post("/add" , verifyToken , async (req , res) => {
      }
 })
 
+router.get("/all" , verifyToken , verifyAdmin , async (req , res) => {
+    try {
+        const feedbacks  = await Feedback.find().sort({createdAt : -1});
+
+        return res.status(200).json(feedbacks);
+    }
+    catch(error) {
+        console.error("Error Found" , error.message);
+    }
+})
+
+router.delete("/delete/:id" , verifyToken , verifyAdmin , async(req , res) => {
+    try {
+        await findByIdAndDelete(req.body.id);
+        return res.status(200).json({message : "Feedback deleted Successfully"});
+    } catch (error) {
+        console.error("Error Found" , error.message);
+    }
+})
 export default router;
