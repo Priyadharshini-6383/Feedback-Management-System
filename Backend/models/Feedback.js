@@ -25,4 +25,4 @@ const FeedbackSchema = new mongoose.Schema ({
     },
 })
 
-export default mongoose.Schema("Feedback" , FeedbackSchema)
+export default mongoose.model("Feedback" , FeedbackSchema)

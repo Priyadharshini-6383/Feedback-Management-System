@@ -1,4 +1,6 @@
 import jsonwebtoken from "jsonwebtoken";
+import dotenv from "dotenv";
+dotenv.config();
 
 export const verifyToken = (req , res , next) => {
 
@@ -11,7 +13,7 @@ export const verifyToken = (req , res , next) => {
         const token = authHeader.split(" ")[1];
     try{
 
-        const decoded = jsonwebtoken.verify(token , process.env.SECRET_KEY);
+        const decoded = jsonwebtoken.verify(token , process.env.JWT_SECRET);
 
         req.user = decoded;
         next();
