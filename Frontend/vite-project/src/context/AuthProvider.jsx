@@ -44,7 +44,4 @@ return (
         {children}
     </AuthContext.Provider>
 )
-
-
-
 }
