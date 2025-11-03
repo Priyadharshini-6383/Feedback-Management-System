@@ -4,12 +4,13 @@ import dotenv from "dotenv";
 import authRoutes from "./routes/authRoutes.js";
 import feedbackRoutes from "./routes/feedbackRoutes.js";
 import Database from "./config/db.js";
-Database();
+
 
 
 
 
 dotenv.config();
+Database();
 
 
 const app = express();

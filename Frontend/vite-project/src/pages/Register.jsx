@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import api from "./api/axios.jsx"
+import api from "../api/axios.jsx"
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Register = () => {
