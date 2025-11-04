@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import api from "../api/axios.jsx"
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Register = () => {
@@ -17,9 +18,9 @@ const handleSubmit = async (e) => {
 
 
       try {
-const res = await api.post("/auth/register" , setData);
-Message(res.data.message);
-setMessage({name : "" , email : "" , password : ""});
+const res = await api.post("/auth/register" , data);
+setMessage(res.data.message);
+setData({name : "" , email : "" , password : ""});
       }
       catch(error) {
 setMessage("Registeration Failed" , error.message);
