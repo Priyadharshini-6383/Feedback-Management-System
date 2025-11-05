@@ -22,13 +22,15 @@ const handleSubmit = async (e) => {
 
       try {
 const res = await api.post("/auth/register" , data);
+ console.log(" Register success:", res.data);
+setMessage(res.data.message || "Registered successfully!");
 setMessage(res.data.message);
 setData({name : "" , email : "" , password : ""});
 
-navigate("/login");
+  navigate("/login")
       }
       catch(error) {
-setMessage("Registeration Failed" , error.message);
+setMessage (error.response?.data?.message || error.message || "Registration Failed");
       }
 
     }
@@ -69,7 +71,7 @@ setMessage("Registeration Failed" , error.message);
         <div className="mb-4">
           <label className="form-label fw-semibold">Password</label>
           <input
-            type="text"
+            type="password"
             name="password"
             value={data.password}
             placeholder="Enter your password"

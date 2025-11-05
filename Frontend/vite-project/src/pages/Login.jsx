@@ -1,4 +1,4 @@
-import React,{useState , useContext, } from "react";
+import React,{useState , useContext} from "react";
 import api from "../api/axios.jsx";
 import {useNavigate} from "react-router-dom";
 import {AuthContext} from "../context/AuthContext.jsx";
@@ -16,7 +16,7 @@ e.preventDefault();
 try {
 
     const res = await api.post("/auth/login" , data);
-    login({role :res.data.user} , res.data.token);
+    login(res.data.user, res.data.token);
 
     if(res.data.role === "admin") {
         navigate("/admin")
