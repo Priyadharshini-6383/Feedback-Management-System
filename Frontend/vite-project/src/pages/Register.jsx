@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import api from "../api/axios.jsx"
+import { useNavigate } from 'react-router-dom';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -11,6 +12,8 @@ const Register = () => {
         password : ""
     });
 
+    const navigate = useNavigate();
+
     const [Message , setMessage] = useState("");
 
 const handleSubmit = async (e) => {
@@ -21,6 +24,8 @@ const handleSubmit = async (e) => {
 const res = await api.post("/auth/register" , data);
 setMessage(res.data.message);
 setData({name : "" , email : "" , password : ""});
+
+navigate("/login");
       }
       catch(error) {
 setMessage("Registeration Failed" , error.message);
