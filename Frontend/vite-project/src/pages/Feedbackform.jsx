@@ -18,7 +18,7 @@ const handleSubmit = async (e) => {
 e.preventDefault();
 try {
 
-    await api.post("/api/feedback" , 
+    await api.post("/feedback/add" , 
 
     {name : user.name , email : user.email, message},
     {

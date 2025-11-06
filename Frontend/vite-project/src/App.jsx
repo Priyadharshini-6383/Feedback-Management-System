@@ -23,7 +23,7 @@ function App() {
   <Routes>
     <Route path = "/" element = {<Register/>} />
     <Route path = "/login" element = {<Login/>} />
-    <Route path="/api/feedback" element={<Feedbackform />} />
+    <Route path="/feedback" element={<Feedbackform />} />
 </Routes>
 </Router>
 </AuthProvider>
