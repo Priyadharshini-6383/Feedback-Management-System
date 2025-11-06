@@ -42,7 +42,7 @@ router.get("/all" , verifyToken , verifyAdmin , async (req , res) => {
 
 router.delete("/delete/:id" , verifyToken , verifyAdmin , async(req , res) => {
     try {
-        await Feedback.findByIdAndDelete(req.body.id);
+        await Feedback.findByIdAndDelete(req.params.id);
         return res.status(200).json({message : "Feedback deleted Successfully"});
     } catch (error) {
         console.error("Error Found" , error.message);
