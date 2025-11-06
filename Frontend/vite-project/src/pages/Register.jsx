@@ -43,7 +43,7 @@ setMessage (error.response?.data?.message || error.message || "Registration Fail
     <h1 className="text-center text-primary mb-4">Register</h1>
 
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} autoComplete="off">
         <div className="mb-3">
           <label className="form-label fw-semibold">Name</label>
           <input

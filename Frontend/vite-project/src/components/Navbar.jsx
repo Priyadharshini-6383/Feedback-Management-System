@@ -11,7 +11,7 @@ const Navbar = () =>{
 return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3">
       <Link className="navbar-brand" to="/">
-        Feedback System
+        Feedback Management System
       </Link>
 
       <div className="ms-auto">
