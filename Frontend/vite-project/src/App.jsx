@@ -3,6 +3,7 @@ import Register from "./pages/Register"
 import Login from "./pages/Login"
 import Feedbackform from "./pages/Feedbackform"
 import AdminDashboard from "./pages/AdminDashboard"
+import Navbar from "./components/Navbar"
 import {BrowserRouter as Router , Routes , Route} from "react-router-dom"
 import { AuthProvider } from "./context/AuthProvider"
 
@@ -20,6 +21,7 @@ function App() {
    
 <AuthProvider>
   <Router>
+    <Navbar/>
 
   <Routes>
     <Route path = "/" element = {<Register/>} />
